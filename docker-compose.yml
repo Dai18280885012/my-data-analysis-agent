@@ -1,0 +1,12 @@
+services:
+  agent-api:
+    build: .
+    container_name: local-data-agent-api
+    ports:
+      - "8000:8000"
+    environment:
+      OLLAMA_MODEL: local-deepseek-data-agent
+      OLLAMA_CHAT_URL: http://host.docker.internal:11434/api/chat
+      HF_HUB_OFFLINE: "1"
+    volumes:
+      - C:/Users/Dai/.cache/huggingface:/root/.cache/huggingface

@@ -1,0 +1,46 @@
+# Python 缓存
+__pycache__/
+*.py[cod]
+
+# Streamlit 本地配置和缓存
+.streamlit/
+.streamlit-cache/
+
+# 本地模型文件，体积很大
+models/*.gguf
+models/
+
+# 本地数据库和向量索引，不上传到 GitHub
+*.db
+*.sqlite
+rag_demo/vector_store/
+
+# 原始真实数据，不上传到 GitHub
+datasets/**/*.xlsx
+datasets/**/*.xls
+datasets/**/*.csv
+datasets/**/*.zip
+
+# 用户上传数据和临时测试文件
+test_data/*.xlsx
+test_data/*.png
+test_data/*.ndjson
+
+# 本地环境和敏感配置
+.env
+.venv/
+venv/
+
+# 本地构建和 QA 输出
+_qa_*/
+*.log
+
+# 个人学习资料，不上传到 GitHub
+每日八股背诵/
+数据分析Agent学习笔记.docx
+
+# 系统和编辑器文件
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
