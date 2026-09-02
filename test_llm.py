@@ -1,9 +1,15 @@
 import httpx
+import os
 from openai import OpenAI
 
-API_KEY = "sk-fc23b1b4b5a7463798382421fb042824"
-BASE_URL = "https://www.rightapi.ai/codex/v1"
-MODEL = "gpt-5.6-luna"
+API_KEY = os.getenv("OPENAI_API_KEY")
+BASE_URL = os.getenv("OPENAI_BASE_URL", "https://www.rightapi.ai/codex/v1")
+MODEL = os.getenv("OPENAI_MODEL", "gpt-5.6-luna")
+
+if not API_KEY:
+    raise RuntimeError(
+        "未找到 OPENAI_API_KEY，请先在当前 PowerShell 配置新的 API Key。"
+    )
 
 base_url = BASE_URL.rstrip("/") + "/"
 
